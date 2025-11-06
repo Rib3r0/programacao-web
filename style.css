@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* Cores e fonts */
+    --primary-color: #d430f5;
+    --secundary-color: #9D70FF;
+    --contrast-color: #0FFF95;
+    --hover-color: linear-gradient(120deg, var(--primary-color) 26%, var(--contrast-color) 100%);
+    --background-color: #0A0A0A;
+    --text-color: #FFFFFF;
+    --font-title: "Poppins", sans-serif;
+    --font-text: "Inter", sans-serif;
+
+    /* Espaçamentos */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+
+    /* Bordas */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+body{
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    font-family: var(--font-text);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-title);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a:hover {
+    background: repeating-linear-gradient(90deg, var(--primary-color) 0%, var(--contrast-color) 50%, var(--primary-color) 100%) 0 0 / 200% 100%;
+    animation: rainbow-shift 3s linear infinite;
+    color: transparent;
+    background-clip: text;
+    transition: .1s ease-in;
+    cursor: pointer;
+}
+a:active {
+    color: var(--contrast-color);
+}
+
+/* Header */
+header{
+    height: 100px;
+    width: 100%;
+    background: repeating-linear-gradient(90deg, var(--primary-color) 0%, var(--contrast-color) 50%, var(--primary-color) 100%) 0 0 / 200% 100%;
+    animation: rainbow-shift 3s linear infinite;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: 0.1s;
+}
+.hidden-header{
+    height: 50px;
+}
+.header-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: end;
+}
+/* Logo */
+.logo-icon{
+    font-size: 60px;
+    transition: .1s ease-out;
+}
+.logo-text{
+    font-size: 48px;
+    transition: .1s ease-out;
+}
+.logo{
+    transform: translate(0px,40px);
+    background-color: var(--background-color);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 0 30px 30px 0;
+    transition: .1s ease-out;
+}
+.logo-card{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.logo-card:hover
+{
+    background: repeating-linear-gradient(90deg, var(--primary-color) 0%, var(--contrast-color) 50%, var(--primary-color) 100%) 0 0 / 200% 100%;
+    animation: rainbow-shift 3s linear infinite;
+    color: transparent;
+    background-clip: text;
+    transition: .1s ease-in;
+    cursor: pointer;
+}
+.hidden-logo{
+    transform: none;
+    padding: 5px 20px;
+    border-radius: 0 40px 40px 0;
+    align-items: center;
+    transition: .1s ease-in;
+    height: 100%;
+}
+.hidden-logo .logo-text{
+    font-size: 24px;
+    transition: .1s ease-in;
+}
+.hidden-logo .logo-icon{
+    font-size: 36px;
+    transition: .1s ease-in;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    align-items: center;
+}
+.nav-menu{
+    display: flex;
+    list-style: None;
+    gap: var(--space-md);
+    text-decoration: none;
+    padding: var(--space-sm);
+    border-radius: 20px 0 0 0;
+    background-color: var(--background-color);
+}
+.nav-link{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+.hidden-nav{
+    border-radius: 30px 0 0 30px;
+}
+
+
+/* Main */
+main{
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+    padding: var(--space-xxl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--contrast-color) 0%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+.hero-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    text-align: center;
+}
+
+.hero-title{
+    font-size: 3rem;
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--contrast-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text{
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.1rem;
+}
+
+.hero-actions{
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    gap: var(--space-xs);
+    position: relative;
+    overflow: hidden;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background: var(--text-color);
+    transition: 0.5s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--contrast-color));
+    color: var(--white);
+    box-shadow: var(--background-color);
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    color: var(--contrast-color);
+    border: 2px solid var(--contrast-color);
+}
+
+
+/* 
+.intro{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+}
+.intro-title{
+    background: linear-gradient(120deg, var(--primary-color) 26%, var(--contrast-color) 100%);
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.intro-content{
+
+}
+footer{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+@keyframes rainbow-shift {
+    to {
+        background-position: -200% 0;
+    }
+}
