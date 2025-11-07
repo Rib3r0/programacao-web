@@ -9,7 +9,7 @@
     --secundary-color: #9D70FF;
     --contrast-color: #0FFF95;
     --hover-color: linear-gradient(120deg, var(--primary-color) 26%, var(--contrast-color) 100%);
-    --background-color: #0A0A0A;
+    --background-color: #0d0d25;
     --text-color: #FFFFFF;
     --font-title: "Poppins", sans-serif;
     --font-text: "Inter", sans-serif;
@@ -61,10 +61,10 @@ a:active {
 
 /* Header */
 header{
-    height: 100px;
+    height: 150px;
     width: 100%;
     background: repeating-linear-gradient(90deg, var(--primary-color) 0%, var(--contrast-color) 50%, var(--primary-color) 100%) 0 0 / 200% 100%;
-    animation: rainbow-shift 3s linear infinite;
+    animation: rainbow-shift 20s linear infinite;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -72,6 +72,7 @@ header{
 }
 .hidden-header{
     height: 50px;
+    animation: none
 }
 .header-container{
     display: flex;
@@ -83,11 +84,11 @@ header{
 /* Logo */
 .logo-icon{
     font-size: 60px;
-    transition: .1s ease-out;
+    transition: .1s linear;
 }
 .logo-text{
     font-size: 48px;
-    transition: .1s ease-out;
+    transition: .1s linear;
 }
 .logo{
     transform: translate(0px,40px);
@@ -95,7 +96,7 @@ header{
     width: fit-content;
     padding: 10px 20px;
     border-radius: 0 30px 30px 0;
-    transition: .1s ease-out;
+    transition: .1s linear;
 }
 .logo-card{
     display: flex;
@@ -103,13 +104,13 @@ header{
     text-decoration: none;
     color: var(--text-color);
 }
+
 .logo-card:hover
 {
     background: repeating-linear-gradient(90deg, var(--primary-color) 0%, var(--contrast-color) 50%, var(--primary-color) 100%) 0 0 / 200% 100%;
     animation: rainbow-shift 3s linear infinite;
     color: transparent;
     background-clip: text;
-    transition: .1s ease-in;
     cursor: pointer;
 }
 .hidden-logo{
@@ -117,16 +118,13 @@ header{
     padding: 5px 20px;
     border-radius: 0 40px 40px 0;
     align-items: center;
-    transition: .1s ease-in;
     height: 100%;
 }
 .hidden-logo .logo-text{
     font-size: 24px;
-    transition: .1s ease-in;
 }
 .hidden-logo .logo-icon{
     font-size: 36px;
-    transition: .1s ease-in;
 }
 
 /* Navegação */
@@ -156,7 +154,7 @@ nav {
 
 /* Main */
 main{
-    padding-top: 100px;
+    padding-top: 150px;
     min-height: 100vh;
 }
 
@@ -165,6 +163,9 @@ main{
     padding: var(--space-xxl) 0;
     position: relative;
     overflow: hidden;
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
 
 .hero::before{
@@ -172,10 +173,10 @@ main{
     position: absolute;
     top: -50%;
     right: -10%;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     background: radial-gradient(circle, var(--contrast-color) 0%, transparent 70%);
-    opacity: 0.1;
+    opacity: 0.17;
     border-radius: 50%;
 }
 .hero-content{
@@ -240,41 +241,264 @@ main{
     color: var(--white);
     box-shadow: var(--background-color);
 }
+.btn-secondary::before {
+    background-color: var(--text-color);
+}
 .btn-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--text-color);
     border: 2px solid var(--primary-color);
 }
 .btn-secondary:hover {
+    color: var(--primary-color);
+}
+.hero-visual{
+    min-width: 100%;
+    height: 160px;
+    background: url("./img/bg.webp");
+    background-attachment: local;
+    background-size: cover;
+    background-position: 0 -150px;
+    background-repeat: no-repeat;
+}
+
+/* seções */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title{
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--contrast-color) 100%);
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.section-actions {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.features{
+    padding-top: 80px;
+}
+
+/* features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.feature-card{
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::after{
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--contrast-color) 100%);
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+}
+.feature-icon{
+    font-size: 2rem;
+}
+
+/* Podcasts em destaque */
+.feature-podcasts {
+    padding-top: 100px;
+}
+.podcasts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* comunidade */
+.community{
+    margin-top: 100px;
+    padding-top: 50px;
+}
+.community-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.community-text{
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+}
+
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number{
+    font-size: 0.9rem;
     color: var(--contrast-color);
-    border: 2px solid var(--contrast-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.community-visual{
+    min-width: 100%;
+    height: 200px;
+    background: url("./img/bg2.avif");
+    background-attachment: local;
+    background-size: cover;
+    background-position: 0 -300px;
+    background-repeat: no-repeat;
 }
 
 
-/* 
-.intro{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    gap: 10px;
-}
-.intro-title{
-    background: linear-gradient(120deg, var(--primary-color) 26%, var(--contrast-color) 100%);
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-}
-.intro-content{
-
-}
+/* Footer */
 footer{
-    height: 100px;
+    padding: var(--space-xxl) 0 var(--space-lg);
+}
+.footer-content::before{
+    content: '';
+    position: absolute;
+    left: 9%;
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    opacity: 0.17;
+    border-radius: 50%;
+}
+
+.footer-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    place-items: center;
+}
+
+.footer-section{
     display: flex;
     flex-direction: column;
+}
+
+.footer-logo{
+    display: flex;
     align-items: center;
-} */
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    font-size: 1rem;
+    font-weight: 700;
+}
+.footer-logo-icon{
+    font-size: 48px;
+}
+.footer-logo-text{
+    font-size: 36px;
+}
+
+
+.footer-description{
+    margin-bottom: 0;
+    min-width: 50%;
+    display: flex;
+    gap: var(--space-xs);
+}
+.footer-description::before{
+    content: '';
+    width: 20px;
+    background: var(--text-color);
+}
+.footer-title{
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    transition: 0.3s ease;
+    margin-bottom: var(--space-sm);
+}
+.footer-links li:hover {
+    transition: 0.3s ease;
+    margin-bottom: var(--space-sm);
+    transform: translate(5px,0);
+}
+
+.footer-links a {
+    transition: 0.3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom  {
+    padding-top: var(--space-lg);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: var(--space-xs);
+}
+
 
 @keyframes rainbow-shift {
     to {
