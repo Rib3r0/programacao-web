@@ -39,13 +39,15 @@
                 <p class="podcast-host">Por Carlos Silva</p>
 
                 <div class="player-controls">
-                    <audio id="podcastAudio"
-                        src="../audio/Kainbeats - mindscapes (Sad Lofi Hiphop EP) [iuT8KImN-Rk].mp3"></audio>
+                    <audio id="podcastAudio">
+                        <source src="../audio/Kainbeats - mindscapes (Sad Lofi Hiphop EP) [iuT8KImN-Rk].mp3" type="audio/mp3">
+                        Seu navegador não suporta o elemento audio.
+                    </audio>
                     <div class="progress-bar">
                         <div class="progress"></div>
                     </div>
                     <div class="time-info">
-                        <span class="current-time">15:30</span>
+                        <span class="current-time">0:00</span>
                         <span class="duration">45:00</span>
                     </div>
 
@@ -61,7 +63,7 @@
                         </button>
                         <div class="volume-control">
                             <i class="fi fi-sr-volume"></i>
-                            <input type="range" class="volume-slider" min="0" max="50" value="50">
+                            <input type="range" class="volume-slider" min="0" max="100" value="100">
                         </div>
                     </div>
                 </div>

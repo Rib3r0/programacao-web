@@ -105,7 +105,7 @@ header{
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     padding: var(--space-lg);
     max-width: 1200px;
     margin: 0 auto;
@@ -113,11 +113,12 @@ header{
 }
 .player-card {
     background: #0004;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     max-width: 500px;
     width: 100%;
+    max-height: 400px;
     text-align: center;
     display: flex; 
     flex-direction: column;
@@ -155,7 +156,7 @@ header{
     overflow: hidden;
 }
 .progress{
-    width: 30%;
+    width: 0%;
     height: 100%;
     background: var(--primary-color);
     border-radius: 3px;
@@ -200,7 +201,7 @@ header{
 .volume-control{
     position: absolute;
     top: 4px;
-    right: -50px;
+    right: 0;
     display: flex;
     align-items: center;
     gap: var(--space-xs);
@@ -212,6 +213,7 @@ header{
     background: #e9ecef;
     border-radius: 2px;
     outline: none;
+    width: 70px;
     -webkit-appearance: none;
 }
 .volume-slider::-webkit-slider-thumb {
@@ -231,7 +233,10 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-height: 400px;
+    min-height: 400px;
     border-left: 1px solid #e9ecef54;
+    border-radius: 0 20px 20px 0;
 }
 .episode-title{
     font-weight: 600;
@@ -241,6 +246,7 @@ header{
     color: #fff4;
     font-size: 0.9rem;
     line-height: 1.5;
+
 }
 
 footer{
